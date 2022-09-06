@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karawanos</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Importy -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./Styles/StyleColors.css">
+    <link rel="stylesheet" type="text/css" href="./Styles/Menu.css">
+    <script src="./Scripts/GameManager.js" type="text/javascript"></script>
+    <script src="./Scripts/CanvasController.js" type="text/javascript"></script>
+    <script src="./Scripts/PointsModificators.js" type="text/javascript"></script>
+    <script src="./Scripts/PlayerColumnManager.js" type="text/javascript"></script>
+    <script src="./Libraries/JQuery.js"></script>
+
+</head>
+<body style="background-image: url(./Textures/Background.png); background-size: 101%;">
+    <div id="MainFrame">
+        <canvas id="InfoPanel"></canvas>
+        <!-- Ekran informatorski -->
+        <div id="ThrowsCounter">Oczekiwanie na rozpoczęcie gry.</div>
+        <div id="Game">
+            <img class="dice" draggable="false" id="d1" onclick="LockDice(0)"></img>
+            <img class="dice" draggable="false" id="d2" onclick="LockDice(1)"></img>
+            <img class="dice" draggable="false" id="d3" onclick="LockDice(2)"></img>
+            <img class="dice" draggable="false" id="d4" onclick="LockDice(3)"></img>
+            <img class="dice" draggable="false" id="d5" onclick="LockDice(4)"></img>
+        </div>
+        <img id="ThrowButton" draggable="false" onclick="ThrowDices()"></button>
+    </div>
+
+    <div id ="LeftSidePanel">
+        <div class ="aColumn" onclick="UseMod('ThreePairs')">3-P</div>
+        <div class ="bColumn" onclick="UseMod('One')">Jedynki</div>
+        <div class ="aColumn" onclick="UseMod('FourPairs')">4-P</div>
+        <div class ="bColumn" onclick="UseMod('Two')">Dwójki</div>
+        <div class ="aColumn" onclick="UseMod('Full')">Full</div>
+        <div class ="bColumn" onclick="UseMod('Three')">Trójki</div>
+        <div class ="aColumn" onclick="UseMod('SStrit')">Mały-S</div>
+        <div class ="bColumn" onclick="UseMod('Four')">Czwórki</div>
+        <div class ="aColumn" onclick="UseMod('HStrit')">Duży-S</div>
+        <div class ="bColumn" onclick="UseMod('Five')">Piatki</div>
+        <div class ="aColumn" onclick="UseMod('General')">Generał</div>
+        <div class ="bColumn" onclick="UseMod('Six')">Szóstki</div>
+        <div class ="aColumn" onclick="UseMod('Chance')">Szansa</div>
+        <div class ="bColumn" onclick="UseMod('None')">Brak</div>      
+    </div>
+    <div id ="RightSidePanel">
+    </div>
+</body>
+
+<script>
+    InitializeGame();
+    InitializeCanvas();
+</script>
+</html>

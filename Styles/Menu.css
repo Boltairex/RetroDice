@@ -1,0 +1,170 @@
+
+#MainFrame{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    left: calc(50% - 315px);
+    width: 630px;
+    height: 95%;
+    background-color: var(--Second);
+    border: 5px solid var(--BorderOutline);
+}
+
+#InfoPanel {
+    margin:auto;
+    display: block;
+    width: 500px;
+    height: 200px;
+    border: 5px solid var(--SecondLighter);
+    border-radius: 2%;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+#Game {
+    margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+    "a a a a a";
+    justify-content: center;
+    align-items: center;
+}
+
+#ThrowsCounter {
+    user-select: none;
+    width: 100%;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin:auto;
+}
+
+#ThrowButton {  
+    user-select: none;
+    filter: saturate(50%);
+    max-width: 50%;
+    max-height: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 40%;
+}
+
+#ThrowButton:hover {  
+    filter: saturate(100%);
+}
+
+#LeftSidePanel {
+    user-select: none;
+
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+
+    position: fixed;
+    left: 0px;
+    background-color: var(--Second);
+    border: 5px solid var(--BorderOutline);
+    
+    height: 70vh;
+    width: 10%;
+    bottom: 15vh;
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-areas: 
+    "a","a",
+    "a","a",
+    "a","a",
+    "a","a",
+    "a","a",
+    "a";
+    justify-content: center;
+    align-items: center;
+}
+
+#RightSidePanel {
+    max-width: 100%;
+    padding: 0.4vw;
+
+    position: fixed;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    right: 0px;
+    background-color: var(--Second);
+    border: 5px solid var(--BorderOutline);
+    
+    display: inline-grid;
+    grid-gap: 0px 0px;
+    grid-template-columns: minmax(0, 1fr);
+    
+    top: 50%; 
+    transform: translateY(-50%);
+}   
+
+.dice {
+    user-select: none;
+    margin: 5px;
+    border: 3px solid var(--BorderOutline);
+    max-width: 90px;
+    max-height: 90px;
+}
+
+.dice-anim {
+    animation-name: spin;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.dice:hover {
+    border: 3px solid yellow;
+}
+
+.aColumn {
+    margin:auto;
+    white-space: normal;
+    line-height: 4vw;
+    background-image: url("../Textures/ModBackground.png");
+    background-size: 100%;
+    grid-column: 1;
+    width: 4vw;
+    height:4vw;
+    border: 3px solid var(--SecondLighter);
+    border-radius: 2%;
+}
+
+.aColumn:hover {
+    border: 3px solid yellow;
+}
+
+.bColumn {
+    margin:auto;
+    line-height: 4vw;
+    background-image: url("../Textures/ModBackground.png");
+    background-size: 100%;
+    grid-column: 2;
+    width: 4vw;
+    height: 4vw;
+    border: 3px solid var(--SecondLighter);
+    border-radius: 2%;
+}
+
+.bColumn:hover {
+    border: 3px solid yellow;
+}
+
+.playerColumn {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.6vw;
+    margin: 0.01px;
+    width: 3vw;
+    height: 2.5vw;
+
+    border: 3px solid var(--SecondLighter);
+    border-radius: 5%;
+    line-height: 2.5vw;
+}
